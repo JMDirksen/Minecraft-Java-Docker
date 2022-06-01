@@ -3,7 +3,6 @@
 echo "eula=$EULA" > eula.txt
 
 echo "difficulty=$DIFFICULTY" > server.properties
-echo "function-permission-level=4" >> server.properties
 echo "level-seed=$SEED" >> server.properties
 echo "max-players=$MAX_PLAYERS" >> server.properties
 echo "motd=$MOTD" >> server.properties

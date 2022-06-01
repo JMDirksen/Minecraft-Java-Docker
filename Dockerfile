@@ -17,4 +17,4 @@ ENV DIFFICULTY=easy
 ENV SEED=
 ENV MAX_PLAYERS=20
 
-ENTRYPOINT [ "/bin/bash", "run.sh" ]
+CMD /bin/bash run.sh
