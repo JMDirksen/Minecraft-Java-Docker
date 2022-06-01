@@ -6,8 +6,15 @@ COPY ./run.sh ./
 VOLUME /minecraft
 
 # Set the java -Xms and -Xmx parameters
-ENV MEMORY=6G
+ENV MEMORY=4G
+
 # Set following to TRUE from run command indicating your agreement to the EULA (https://account.mojang.com/documents/minecraft_eula).
 ENV EULA=false
+
+# server.properties settings
+ENV MOTD="A Minecraft Server"
+ENV DIFFICULTY=easy
+ENV SEED=
+ENV MAX_PLAYERS=20
 
 ENTRYPOINT [ "/bin/bash", "run.sh" ]
