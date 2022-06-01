@@ -11,12 +11,12 @@ services:
       - minecraft-java:/minecraft
     environment:
       - EULA=true
-      - MOTD=Example Minecraft Server
-      - DIFFICULTY=easy
-      - SEED=
-      - MAX_PLAYERS=20
-      - PLAYER_IDLE_TIMEOUT=0
-      - SPAWN_PROTECTION=16
+      - motd=Example Minecraft Server
+      - difficulty=easy
+      - level-seed=
+      - max-players=20
+      - player-idle-timeout=0
+      - spawn-protection=16
 
 volumes:
   minecraft-java:
