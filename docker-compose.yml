@@ -13,10 +13,10 @@ services:
       - EULA=true
       - motd=Example Minecraft Server
       - difficulty=easy
-      - level-seed=
-      - max-players=20
-      - player-idle-timeout=0
-      - spawn-protection=16
+      - level_seed=
+      - max_players=20
+      - player_idle_timeout=0
+      - spawn_protection=16
 
 volumes:
   minecraft-java:
