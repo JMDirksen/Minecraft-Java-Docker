@@ -6,6 +6,8 @@ echo "difficulty=$DIFFICULTY" > server.properties
 echo "level-seed=$SEED" >> server.properties
 echo "max-players=$MAX_PLAYERS" >> server.properties
 echo "motd=$MOTD" >> server.properties
+echo "player-idle-timeout=$PLAYER_IDLE_TIMEOUT" >> server.properties
+echo "spawn-protection=$SPAWN_PROTECTION" >> server.properties
 
 while true
 do
