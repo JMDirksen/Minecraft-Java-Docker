@@ -18,5 +18,14 @@ services:
       - player_idle_timeout=0
       - spawn_protection=16
 
+  stats:
+    image: jmdirksen/minecraftstats
+    container_name: minecraftstats
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - minecraft:/minecraft
+
 volumes:
   minecraft:
