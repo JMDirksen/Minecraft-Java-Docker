@@ -1,7 +1,7 @@
 FROM ubuntu
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y openjdk-18-jre-headless curl jq
-WORKDIR /minecraft
+WORKDIR /root
 COPY ./run.sh ./
 VOLUME /minecraft
 

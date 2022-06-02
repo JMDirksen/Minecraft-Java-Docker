@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /minecraft
+
 echo "eula=$EULA" > eula.txt
 
 echo "allow-flight=${allow_flight}" > server.properties
