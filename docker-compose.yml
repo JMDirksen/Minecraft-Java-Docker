@@ -26,6 +26,9 @@ services:
       - 80:80
     volumes:
       - minecraft:/minecraft
+    environment:
+      - INACTIVE_DAYS=30
+      - MIN_PLAYTIME=15
 
 volumes:
   minecraft:

@@ -7,6 +7,8 @@ VOLUME /minecraft
 WORKDIR /usr/local/apache2/htdocs
 ENV SERVER=/minecraft
 ENV INTERVAL=60
-CMD (python3 makeconfig.py --server ${SERVER} > config.json;) \
+ENV INACTIVE_DAYS=7
+ENV MIN_PLAYTIME=0
+CMD (python3 makeconfig.py --server ${SERVER} --inactive-days ${INACTIVE_DAYS} --min-playtime ${MIN_PLAYTIME} > config.json;) \
     && ((while true; do python3 update.py config.json; sleep ${INTERVAL}; done;) &) \
     && httpd-foreground
