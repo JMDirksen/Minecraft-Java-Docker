@@ -11,6 +11,7 @@ services:
       - ./minecraft:/minecraft
     environment:
       - EULA=true
+      - MEMORY=4G
       - motd=Example Minecraft Server
       - difficulty=easy
       - level_seed=
