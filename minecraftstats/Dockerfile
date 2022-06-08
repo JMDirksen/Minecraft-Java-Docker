@@ -10,5 +10,5 @@ ENV INTERVAL=60
 ENV INACTIVE_DAYS=7
 ENV MIN_PLAYTIME=0
 CMD (python3 makeconfig.py --server ${SERVER} --inactive-days ${INACTIVE_DAYS} --min-playtime ${MIN_PLAYTIME} > config.json;) \
-    && ((while true; do python3 update.py config.json; sleep ${INTERVAL}; done;) &) \
+    && ((while true; do sleep ${INTERVAL}; python3 update.py config.json; done;) &) \
     && httpd-foreground

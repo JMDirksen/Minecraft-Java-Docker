@@ -57,6 +57,24 @@ echo "use-native-transport=${use_native_transport}" >> server.properties
 echo "view-distance=${view_distance}" >> server.properties
 echo "white-list=${white_list}" >> server.properties
 
+{
+  while true
+  do
+    echo "Starting restart timer (${RESTART_INTERVAL} seconds)"
+    sleep ${RESTART_INTERVAL}
+    echo "Initiating restart..."
+    /root/mcrcon -P ${rcon_port} -p ${rcon_password} -w 10 \
+      list \
+      "tellraw @a {\"text\":\"Server will restart in 1 minute...\",\"color\":\"red\"}" \
+      list \
+      list \
+      "tellraw @a {\"text\":\"Server will restart in 30 seconds...\",\"color\":\"red\"}" \
+      list \
+      "tellraw @a {\"text\":\"Server will restart in 10 seconds...\",\"color\":\"red\"}" \
+      stop
+  done
+} &
+
 while true
 do
 

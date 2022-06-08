@@ -1,8 +1,12 @@
 FROM ubuntu
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y openjdk-18-jre-headless curl jq
+ENV TZ=Europe/Amsterdam
+RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 WORKDIR /root
 COPY ./run.sh ./
+ADD https://github.com/Tiiffi/mcrcon/releases/download/v0.7.2/mcrcon-0.7.2-linux-x86-64.tar.gz ./mcrcon.tar.gz
+RUN tar -zxf mcrcon.tar.gz && rm mcrcon.tar.gz
 VOLUME /minecraft
 
 # Set the java -Xms and -Xmx parameters
@@ -10,6 +14,9 @@ ENV MEMORY=4G
 
 # Set following to TRUE from run command indicating your agreement to the EULA (https://account.mojang.com/documents/minecraft_eula).
 ENV EULA=false
+
+# Interval in seconds for restarting the minecraft server
+ENV RESTART_INTERVAL=36000
 
 # server.properties settings
 ENV allow_flight=false
@@ -20,7 +27,7 @@ ENV difficulty=easy
 ENV enable_command_block=false
 ENV enable_jmx_monitoring=false
 ENV enable_query=false
-ENV enable_rcon=false
+ENV enable_rcon=true
 ENV enable_status=true
 ENV enforce_whitelist=false
 ENV entity_broadcast_range_percentage=100
@@ -46,7 +53,7 @@ ENV prevent_proxy_connections=false
 ENV pvp=true
 ENV query_port=25565
 ENV rate_limit=0
-ENV rcon_password=
+ENV rcon_password=password
 ENV rcon_port=25575
 ENV require_resource_pack=false
 ENV resource_pack=
