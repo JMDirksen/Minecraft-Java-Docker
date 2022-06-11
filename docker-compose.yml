@@ -1,6 +1,7 @@
 services:
   server:
     image: jmdirksen/minecraft-java
+    build: .
     container_name: minecraft-java
     restart: unless-stopped
     stdin_open: true
@@ -21,6 +22,7 @@ services:
 
   stats:
     image: jmdirksen/minecraftstats
+    build: ./minecraftstats
     container_name: minecraftstats
     restart: unless-stopped
     ports:
@@ -34,5 +36,8 @@ services:
 
   votifier:
     image: jmdirksen/vanillavotifier
+    build: ./vanillavotifier
     container_name: vanillavotifier
     restart: unless-stopped
+    stdin_open: true
+    tty: true

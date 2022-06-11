@@ -1,6 +1,5 @@
 FROM ubuntu
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y openjdk-17-jre-headless curl jq
+RUN apt-get update && apt-get install -y openjdk-17-jre-headless curl jq
 WORKDIR /root
 COPY ./run.sh ./
 ADD https://github.com/Tiiffi/mcrcon/releases/download/v0.7.2/mcrcon-0.7.2-linux-x86-64.tar.gz ./mcrcon.tar.gz
