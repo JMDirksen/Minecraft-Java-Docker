@@ -1,0 +1,7 @@
+services:
+  server:
+    build: .
+  stats:
+    build: ./minecraftstats
+  votifier:
+    build: ./vanillavotifier

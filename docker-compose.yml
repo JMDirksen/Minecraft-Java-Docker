@@ -31,3 +31,8 @@ services:
       - INTERVAL=300
       - INACTIVE_DAYS=30
       - MIN_PLAYTIME=15
+
+  votifier:
+    image: jmdirksen/vanillavotifier
+    container_name: vanillavotifier
+    restart: unless-stopped
