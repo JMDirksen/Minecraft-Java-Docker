@@ -62,7 +62,7 @@ main () {
   echo "white-list=${white_list}" >> server/server.properties
 
   # Get current version
-  [ -f "version" ] && current_version=$(cat "version") || current_version=0
+  [ -f "version" && -f "server/server.jar" ] && current_version=$(cat "version") || current_version=0
   echo "Current version: $current_version"
 
   # Get latest version
