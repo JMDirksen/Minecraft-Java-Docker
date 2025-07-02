@@ -10,7 +10,7 @@ COPY stats.sh .
 ENV MEMORY=4G
 
 # Set following to TRUE from run command indicating your agreement to the EULA (https://account.mojang.com/documents/minecraft_eula).
-ENV EULA=false
+ENV EULA=
 
 # server.properties settings
 ENV level_seed=
