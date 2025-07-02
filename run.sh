@@ -3,7 +3,7 @@
 . stats.sh &
 
 main () {
-  echo "eula=$EULA" > server/eula.txt
+  [ -n "$EULA" ] && echo "eula=$EULA" > server/eula.txt
   echo "level-seed=${level_seed}" >> server/server.properties
 
   # Get current version
