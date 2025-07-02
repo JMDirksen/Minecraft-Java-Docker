@@ -15,6 +15,11 @@ cd ~/minecraftjava
 git pull
 docker build -t minecraftjava .
 docker rm -f minecraftjava
-docker run -dit --name minecraftjava --restart unless-stopped -p 25565:25565 -v ./server:/data/server minecraftjava
+docker run -dit --name minecraftjava \
+  --restart unless-stopped \
+  -p 25565:25565 \
+  -v ./server:/data/server \
+  -e DEPLOYMENTID=**********
+  minecraftjava
 docker logs -ft minecraftjava
 ```

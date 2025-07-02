@@ -4,6 +4,7 @@ EXPOSE 25565
 VOLUME /data/server
 WORKDIR /data
 COPY run.sh .
+COPY stats.sh .
 
 # Set the java -Xms and -Xmx parameters
 ENV MEMORY=4G
@@ -13,5 +14,8 @@ ENV EULA=false
 
 # server.properties settings
 ENV level_seed=
+
+# Google Deployment ID
+ENV DEPLOYMENTID=
 
 CMD ["/bin/bash", "run.sh"]
