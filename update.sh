@@ -11,12 +11,10 @@ main() {
 
     # Get current version
     [ -f "server/version" -a -f "server/server.jar" ] && current_version=$(cat "server/version") || current_version=0
-    echo "Current version: $current_version"
 
     # Get latest version
     manifest_url="https://launchermeta.mojang.com/mc/game/version_manifest.json"
     latest_version=$(curl -s "$manifest_url" | jq -r ".latest.release")
-    echo "Latest version: $latest_version"
 
     # Stop if not up-to-date
     [ $current_version != $latest_version ] && stop_server || echo "No update."
