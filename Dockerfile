@@ -3,9 +3,9 @@ RUN apt-get update && apt-get install -y openjdk-21-jre-headless curl jq
 EXPOSE 25565
 VOLUME /data/server
 WORKDIR /data
-COPY run.sh .
-COPY update.sh .
-COPY stats.sh .
+COPY --chmod=700 run.sh .
+COPY --chmod=700 update.sh .
+COPY --chmod=700 stats.sh .
 
 # Set the java -Xms and -Xmx parameters
 ENV MEMORY=4G
