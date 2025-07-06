@@ -4,6 +4,7 @@ EXPOSE 25565
 VOLUME /data/server
 WORKDIR /data
 COPY run.sh .
+COPY update.sh .
 COPY stats.sh .
 
 # Set the java -Xms and -Xmx parameters
