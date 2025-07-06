@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 60
+sleep 1.5m
 
 while [ -n "$DEPLOYMENTID" ]; do
   limit=$((60 / 5 * 24 * 30))
