@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update && apt-get install -y openjdk-21-jre-headless curl jq
+RUN apt-get update && apt-get install -y openjdk-21-jre-headless curl jq screen
 EXPOSE 25565
 VOLUME /data/server
 WORKDIR /data
