@@ -27,11 +27,11 @@ main() {
 stop_server() {
   echo "New update available!"
   echo "Stopping server for update..."
-  screen -S mc -X stuff "tellraw @a {\"rawtext\":[{\"text\":\"§cRestarting in 30 seconds...\"}]}\n"
+  screen -S mc -X stuff "tellraw @a {\"text\":\"Restarting in 30 sec...\",\"color\":\"red\"}\n"
   sleep 20
-  screen -S mc -X stuff "tellraw @a {\"rawtext\":[{\"text\":\"§cRestarting in 10 seconds...\"}]}\n"
+  screen -S mc -X stuff "tellraw @a {\"text\":\"Restarting in 10 sec...\",\"color\":\"red\"}\n"
   sleep 5
-  screen -S mc -X stuff "tellraw @a {\"rawtext\":[{\"text\":\"§cRestarting in 5 seconds...\"}]}\n"
+  screen -S mc -X stuff "tellraw @a {\"text\":\"Restarting in 5 sec...\",\"color\":\"red\"}\n"
   sleep 5
   screen -S mc -X stuff "stop\n"
 }
