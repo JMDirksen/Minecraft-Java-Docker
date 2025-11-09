@@ -2,7 +2,7 @@
 
 
 [ -n "$EULA" ] && echo "eula=$EULA" > server/eula.txt
-echo "level-seed=${level_seed}" >> server/server.properties
+[ -n "$SEED" ] && echo "level-seed=$SEED" >> server/server.properties
 
 # Get current version
 [ -f "server/version" -a -f "server/server.jar" ] && current_version=$(cat "server/version") || current_version=0

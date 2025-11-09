@@ -15,7 +15,7 @@ ENV MEMORY=4G
 ENV EULA=
 
 # server.properties settings
-ENV level_seed=
+ENV SEED=
 
 # Webstore URL - See: https://github.com/JMDirksen/WebStore
 ENV WEBSTORE=

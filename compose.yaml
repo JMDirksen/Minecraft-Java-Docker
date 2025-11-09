@@ -1,0 +1,16 @@
+services:
+  minecraftjava:
+    build: .
+    container_name: minecraftjava
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./server:/data/server
+    environment:
+      - MEMORY=4G
+      - EULA=true
+      - SEED=abc
+      - WEBSTORE=https://webstore.domain.com
+    restart: unless-stopped
+    tty: true
+    stdin_open: true

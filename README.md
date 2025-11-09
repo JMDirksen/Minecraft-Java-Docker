@@ -1,5 +1,4 @@
 # Deploy
-
 ```
 cd ~
 git clone https://github.com/JMDirksen/Minecraft-Java-Docker.git minecraftjava
@@ -9,13 +8,11 @@ docker run -it --rm --name minecraftjava \
   -p 25565:25565 \
   -v ./server:/data/server \
   -e EULA=true \
-  -e level_seed=abc \
+  -e SEED=abc \
   minecraftjava
 ```
 
-
 # Update/Run
-
 ```
 cd ~/minecraftjava
 git pull
@@ -28,4 +25,11 @@ docker run -dit --name minecraftjava \
   -e WEBSTORE=https://webstore.domain.com \
   minecraftjava
 docker logs -ft minecraftjava
+```
+
+# Compose file
+You can also use the compose file like so:
+```
+docker compose up -d
+docker compose logs -ft
 ```
