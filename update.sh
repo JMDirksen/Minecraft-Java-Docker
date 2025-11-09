@@ -1,6 +1,7 @@
 #!/bin/bash
 
 main() {
+  sleep 10s
   echo "Updater started."
 
   sleep 1m

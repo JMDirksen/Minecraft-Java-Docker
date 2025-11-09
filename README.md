@@ -1,6 +1,7 @@
 # Deploy
 
 ```
+cd ~
 git clone https://github.com/JMDirksen/Minecraft-Java-Docker.git minecraftjava
 cd minecraftjava
 docker build -t minecraftjava .
@@ -24,7 +25,7 @@ docker run -dit --name minecraftjava \
   --restart unless-stopped \
   -p 25565:25565 \
   -v ./server:/data/server \
-  -e DEPLOYMENTID=********** \
+  -e WEBSTORE=https://webstore.domain.com \
   minecraftjava
 docker logs -ft minecraftjava
 ```
